@@ -129,7 +129,7 @@ You have had the chance to have a chat with Paolo and he told you all about the 
 - Paolo also mentioned that somehow he can do all the above with an assortment of ingredients, which can all be combined at the wimps of the customer.  He mentioned: ham, cheese, muchrooms, gorgonzola, spinach, speck, nutella, jam, ...
 - Paolo indicated that he wants the customer to be able to say that they want double, triple, ... amount of each ingredient
 
-
+Draw a class diagram representing the different types of offering that can be ordered at **Chiosco da Paolo**.
 
 
 
