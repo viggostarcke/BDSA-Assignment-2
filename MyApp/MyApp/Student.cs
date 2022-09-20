@@ -1,5 +1,4 @@
-﻿var i = 1;
-public class Student {
+﻿public class Student {
     public int Id { get; init; }
     public string GivenName { get; set; }
     public string Surname { get; set; }
