@@ -8,7 +8,15 @@ public class Student {
     public DateTime EndDate { get; set; }
     public DateTime GraduationDate { get; set; }
 
-
+    public Student(int id, string givenName, string surname, DateTime startDate, DateTime endDate, DateTime graduationDate)
+    {
+        Id = id;
+        GivenName = givenName;
+        Surname = surname;
+        StartDate = startDate;
+        EndDate = endDate;
+        GraduationDate = graduationDate;
+    }
 }
 
 public enum Status{New, Active, Dropout, Graduated}
