@@ -56,10 +56,14 @@ public class QueriesTests
     public void Query_Returns_Wizard_Grouped_By_Creator() 
     {
         //Arrange
-        
+        List<string> expectedList = new List<string> {"Gargamel", "Gandalf", "Sauron", "Harry Potter", "Severus Snape", "Sirius Black", "Voldemort", "Melisandre", "Darth Sidious", "Darth Vader", "Kylo Ren", "Rey Palpatine"};
+
         //Act
+        var actualLinq = Queries.Get_Wizards_Grouped_By_Creator_Reverse_Order_Linq();
+        var actualExtensions = Queries.Get_Wizards_Grouped_By_Creator_Reverse_Order_Extensions();
 
         //Assert
-
+        actualLinq.Should().Equal(expectedList);
+        actualExtensions.Should().Equal(expectedList);
     }
 }

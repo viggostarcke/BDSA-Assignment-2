@@ -51,13 +51,24 @@ public class Queries
         return wizardsFromHarryPotter;
     }
 
-    public static IEnumerable<string> Get_Wizards_Grouped_By_Creator_Reverse_Order() 
+    public static IEnumerable<string> Get_Wizards_Grouped_By_Creator_Reverse_Order_Linq() 
     {
         var wizardCollection = WizardCollection.Create();
 
         var wizardsOutput = from w in wizardCollection
+                            orderby w.Creator descending, w.Name ascending
                             group w.Name by w.Creator into h
                             select h;
-        throw new NotImplementedException();
+        
+        return wizardsOutput.SelectMany(w => w);
     }
+
+    public static IEnumerable<string> Get_Wizards_Grouped_By_Creator_Reverse_Order_Extensions() 
+    {
+        var wizardCollection = WizardCollection.Create();
+
+        var wizardsOutput = wizardCollection.OrderByDescending(w => w.Creator).ThenBy(w => w.Name).GroupBy(w => w.Creator).SelectMany(w => w).Select(w => w.Name);
+        return wizardsOutput;
+    }
+    
 }
